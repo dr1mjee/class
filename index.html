@@ -131082,7 +131082,7 @@ function MXIncome() {
   }
   const max = Math.max(1, ...weeks.map((x) => x[2]));
   const rows = Object.entries(E.byStudent).map(([id, v]) => ({ id, ...v })).sort((x, y) => y.sum - x.sum);
-  return /* @__PURE__ */ H.createElement(H.Fragment, null, /* @__PURE__ */ H.createElement("div", { className: "top" }, /* @__PURE__ */ H.createElement("h1", null, "\u0414\u043E\u0445\u043E\u0434"), months.map((m, i) => /* @__PURE__ */ H.createElement("button", { key: i, className: "chip" + (mi === i ? " on" : ""), onClick: () => setMi(i) }, MX.MONN[m.getMonth()]))), /* @__PURE__ */ H.createElement("div", { className: "grid", style: { gridTemplateColumns: "minmax(0,2fr) minmax(0,1fr)" } }, /* @__PURE__ */ H.createElement("section", { className: "card" }, /* @__PURE__ */ H.createElement("span", { className: "mute" }, "\u041E\u043F\u043B\u0430\u0447\u0435\u043D\u043E \xB7 ", MX.MONN[M.getMonth()].toLowerCase()), /* @__PURE__ */ H.createElement("div", { className: "big", style: { marginTop: 6 } }, MX.rub(E.sum)), /* @__PURE__ */ H.createElement("div", { className: "bars", style: { "--n": weeks.length } }, weeks.map((x) => /* @__PURE__ */ H.createElement("div", { key: x[0], className: "bar" }, /* @__PURE__ */ H.createElement("span", { style: { color: "var(--ink)", fontWeight: 500 } }, x[2] ? MX.rub(x[2]) : ""), /* @__PURE__ */ H.createElement("i", { className: t >= x[0] && t <= x[1] ? "cur" : "", style: { height: Math.max(6, x[2] / max * 120) } }), /* @__PURE__ */ H.createElement("span", null, MX.d(x[0]).getDate(), "\u2013", MX.d(x[1]).getDate()))))), /* @__PURE__ */ H.createElement("div", { className: "grid" }, /* @__PURE__ */ H.createElement("section", { className: "card pcard", style: { background: "#FCE9CC" } }, /* @__PURE__ */ H.createElement("span", null, "\u0416\u0434\u0451\u0442 \u043E\u043F\u043B\u0430\u0442\u044B"), /* @__PURE__ */ H.createElement("div", { className: "big", style: { fontSize: 34 } }, MX.rub(E.waitSum))), /* @__PURE__ */ H.createElement("section", { className: "card pcard", style: { background: "#D8F3E2" } }, /* @__PURE__ */ H.createElement("span", null, "\u041F\u0440\u043E\u0432\u0435\u0434\u0435\u043D\u043E \u0438 \u043E\u043F\u043B\u0430\u0447\u0435\u043D\u043E"), /* @__PURE__ */ H.createElement("div", { className: "big", style: { fontSize: 34 } }, MX.plural(E.n, "\u0443\u0440\u043E\u043A", "\u0443\u0440\u043E\u043A\u0430", "\u0443\u0440\u043E\u043A\u043E\u0432"))))), /* @__PURE__ */ H.createElement("section", { className: "card", style: { marginTop: 14 } }, rows.length ? /* @__PURE__ */ H.createElement("table", null, /* @__PURE__ */ H.createElement("thead", null, /* @__PURE__ */ H.createElement("tr", null, /* @__PURE__ */ H.createElement("th", null, "\u0423\u0447\u0435\u043D\u0438\u043A"), /* @__PURE__ */ H.createElement("th", null, "\u0421\u0442\u0430\u0432\u043A\u0430"), /* @__PURE__ */ H.createElement("th", { className: "n" }, "\u0423\u0440\u043E\u043A\u043E\u0432"), /* @__PURE__ */ H.createElement("th", { className: "n" }, "\u041E\u043F\u043B\u0430\u0447\u0435\u043D\u043E"))), /* @__PURE__ */ H.createElement("tbody", null, rows.map((r) => {
+  return /* @__PURE__ */ H.createElement(H.Fragment, null, /* @__PURE__ */ H.createElement("div", { className: "top" }, /* @__PURE__ */ H.createElement("h1", null, "\u0414\u043E\u0445\u043E\u0434"), months.map((m, i) => /* @__PURE__ */ H.createElement("button", { key: i, className: "chip" + (mi === i ? " on" : ""), onClick: () => setMi(i) }, MX.MONN[m.getMonth()]))), /* @__PURE__ */ H.createElement("div", { className: "grid", style: { gridTemplateColumns: "minmax(0,2fr) minmax(0,1fr)" } }, /* @__PURE__ */ H.createElement("section", { className: "card mxk-lav" }, /* @__PURE__ */ H.createElement("span", { className: "mute" }, "\u041E\u043F\u043B\u0430\u0447\u0435\u043D\u043E \xB7 ", MX.MONN[M.getMonth()].toLowerCase()), /* @__PURE__ */ H.createElement("div", { className: "big", style: { marginTop: 6 } }, MX.rub(E.sum)), /* @__PURE__ */ H.createElement("div", { className: "bars", style: { "--n": weeks.length } }, weeks.map((x) => /* @__PURE__ */ H.createElement("div", { key: x[0], className: "bar" }, /* @__PURE__ */ H.createElement("span", { style: { color: "var(--ink)", fontWeight: 500 } }, x[2] ? MX.rub(x[2]) : ""), /* @__PURE__ */ H.createElement("i", { className: t >= x[0] && t <= x[1] ? "cur" : "", style: { height: Math.max(6, x[2] / max * 120) } }), /* @__PURE__ */ H.createElement("span", null, MX.d(x[0]).getDate(), "\u2013", MX.d(x[1]).getDate()))))), /* @__PURE__ */ H.createElement("div", { className: "grid" }, /* @__PURE__ */ H.createElement("section", { className: "card pcard", style: { background: "#FCE9CC" } }, /* @__PURE__ */ H.createElement("span", null, "\u0416\u0434\u0451\u0442 \u043E\u043F\u043B\u0430\u0442\u044B"), /* @__PURE__ */ H.createElement("div", { className: "big", style: { fontSize: 34 } }, MX.rub(E.waitSum))), /* @__PURE__ */ H.createElement("section", { className: "card pcard", style: { background: "#D8F3E2" } }, /* @__PURE__ */ H.createElement("span", null, "\u041F\u0440\u043E\u0432\u0435\u0434\u0435\u043D\u043E \u0438 \u043E\u043F\u043B\u0430\u0447\u0435\u043D\u043E"), /* @__PURE__ */ H.createElement("div", { className: "big", style: { fontSize: 34 } }, MX.plural(E.n, "\u0443\u0440\u043E\u043A", "\u0443\u0440\u043E\u043A\u0430", "\u0443\u0440\u043E\u043A\u043E\u0432"))))), /* @__PURE__ */ H.createElement("section", { className: "card", style: { marginTop: 14 } }, rows.length ? /* @__PURE__ */ H.createElement("table", null, /* @__PURE__ */ H.createElement("thead", null, /* @__PURE__ */ H.createElement("tr", null, /* @__PURE__ */ H.createElement("th", null, "\u0423\u0447\u0435\u043D\u0438\u043A"), /* @__PURE__ */ H.createElement("th", null, "\u0421\u0442\u0430\u0432\u043A\u0430"), /* @__PURE__ */ H.createElement("th", { className: "n" }, "\u0423\u0440\u043E\u043A\u043E\u0432"), /* @__PURE__ */ H.createElement("th", { className: "n" }, "\u041E\u043F\u043B\u0430\u0447\u0435\u043D\u043E"))), /* @__PURE__ */ H.createElement("tbody", null, rows.map((r) => {
     const s = n.studentsById[r.id];
     return /* @__PURE__ */ H.createElement("tr", { key: r.id }, /* @__PURE__ */ H.createElement("td", null, /* @__PURE__ */ H.createElement("span", { style: { display: "flex", alignItems: "center", gap: 10 } }, /* @__PURE__ */ H.createElement("span", { className: "pa", style: { background: MX.col(r.id) } }, MXini(n.nameOf(r.id))), n.nameOf(r.id))), /* @__PURE__ */ H.createElement("td", null, s && ub(s) ? MX.rub(ub(s)) + " \u0432 \u0447\u0430\u0441" : "\u2014"), /* @__PURE__ */ H.createElement("td", { className: "n" }, r.n), /* @__PURE__ */ H.createElement("td", { className: "n" }, /* @__PURE__ */ H.createElement("b", null, MX.rub(r.sum))));
   }))) : /* @__PURE__ */ H.createElement("div", { className: "empty" }, "\u0412 \u044D\u0442\u043E\u043C \u043C\u0435\u0441\u044F\u0446\u0435 \u043E\u043F\u043B\u0430\u0442 \u043D\u0435\u0442")));
@@ -132364,6 +132364,54 @@ div:has(>.mm-txk) .mm-txk{line-height:1}
 .theme-dark .mmx .mxthumb,.theme-dark .mmx .mxthumb *{background-color:#2A2A2D!important;color:#8A8A90}
 /* тёмный фон тоже с градиентом */
 .theme-dark .mmx-root{background:linear-gradient(165deg,#18201F 0%,#141617 45%,#0E0E0F 100%)}
+/* текст в режиме показа — по центру */
+.mm-show .mm-sh-thead,.mm-sh-thead{justify-content:center}
+/* левая панель: свёрнута, раскрывается при наведении */
+@media (min-width:900px){
+.mmx .app{position:relative}
+.mmx .side{position:absolute;left:0;top:0;bottom:0;width:252px;z-index:40;background:var(--glass);transform:translateX(calc(-100% + 16px));transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s;box-shadow:none}
+.mmx .side>*{transition:opacity .18s}
+.mmx .side:not(:hover)>*{opacity:0}
+.mmx .side::after{content:"";position:absolute;right:6px;top:50%;width:4px;height:44px;margin-top:-22px;border-radius:2px;background:rgba(17,17,17,.18);transition:opacity .2s}
+.mmx .side:hover{transform:none;box-shadow:24px 0 60px -30px rgba(0,0,0,.35)}
+.mmx .side:hover::after{opacity:0}
+.mmx .main{margin-left:22px}
+.theme-dark .mmx .side::after{background:rgba(255,255,255,.22)}
+}
+/* ===== Система цвета: ч/б — структура (текст, меню, списки, формы, кнопки);
+   пастельный градиент — карточки с данными и группы; серый — только поля и переключатели ===== */
+.mmx{--g-lav:linear-gradient(135deg,#E7E2FB 0%,#F1EEFD 100%);--g-sky:linear-gradient(135deg,#DCEBFB 0%,#ECF4FD 100%);--g-peach:linear-gradient(135deg,#FCE9CC 0%,#FBE3D6 100%);--g-mint:linear-gradient(135deg,#D8F3E2 0%,#E8F8EE 100%)}
+.mmx .mxk-lav{background:var(--g-lav)!important;border-color:transparent!important}
+.mmx .mxk-lav .mute{color:#45454A}
+/* карточка ученика */
+.mmx .mxstats .st{color:#111}
+.mmx .mxstats .st:nth-child(1){background:var(--g-lav)}
+.mmx .mxstats .st:nth-child(2){background:var(--g-mint)}
+.mmx .mxstats .st:nth-child(3){background:var(--g-sky)}
+.mmx .mxstats .st:nth-child(4){background:var(--g-peach)}
+.mmx .mxstats .st span{color:#45454A}.mmx .mxstats .st small{color:#55595D}
+.mmx .mxstats button.st:hover{filter:brightness(.98);background:var(--g-lav)}
+.mmx .sbox{background:var(--g-lav);color:#111}.mmx .sbox .mute{color:#45454A}
+.mmx .mxfold{background:#fff;box-shadow:inset 0 0 0 1px var(--line)}.mmx .mxfold:hover{background:#FAFAFB}
+.mmx .mxhw .hw{background:var(--g-sky);color:#111}
+.mmx .mxbk:not(.add){background:var(--g-mint);color:#111}.mmx .mxbk .mute{color:#45454A}
+.mmx .mxwho{background:var(--g-sky);color:#111}.mmx .mxwho .mute{color:#45454A}.mmx .mxwho .empty{background:rgba(255,255,255,.7)}
+/* задания: у каждой колонки свой цвет, карточки белые */
+.mmx .kan .lane:nth-child(1){background:var(--g-sky)}
+.mmx .kan .lane:nth-child(2){background:var(--g-peach)}
+.mmx .kan .lane:nth-child(3){background:var(--g-mint)}
+.mmx .kan .lane{color:#111}.mmx .kan .lane .mute{color:#45454A}
+.mmx .kan .lane .hw{background:#fff;box-shadow:0 6px 18px -14px rgba(0,0,0,.35)}
+/* тёмная тема: пастель остаётся пастелью, текст на ней тёмный */
+.theme-dark .mmx .mxstats .st,.theme-dark .mmx .sbox,.theme-dark .mmx .mxhw .hw,.theme-dark .mmx .mxbk:not(.add),.theme-dark .mmx .mxwho,.theme-dark .mmx .kan .lane,.theme-dark .mmx .mxk-lav{color:#111}
+.theme-dark .mmx .mxstats .st:nth-child(1),.theme-dark .mmx .sbox,.theme-dark .mmx .mxk-lav{background:var(--g-lav)!important}
+.theme-dark .mmx .mxstats .st:nth-child(2),.theme-dark .mmx .mxbk:not(.add){background:var(--g-mint)}
+.theme-dark .mmx .mxstats .st:nth-child(3),.theme-dark .mmx .mxhw .hw,.theme-dark .mmx .mxwho{background:var(--g-sky)}
+.theme-dark .mmx .mxstats .st:nth-child(4){background:var(--g-peach)}
+.theme-dark .mmx .kan .lane:nth-child(1){background:var(--g-sky)}.theme-dark .mmx .kan .lane:nth-child(2){background:var(--g-peach)}.theme-dark .mmx .kan .lane:nth-child(3){background:var(--g-mint)}
+.theme-dark .mmx .kan .lane .hw{background:#fff;color:#111}
+.theme-dark .mmx .mxfold{background:#1C1C1E;box-shadow:inset 0 0 0 1px #2E2E31}
+.theme-dark .mmx .mxk-lav .big,.theme-dark .mmx .mxstats .st b{color:#111}
 </style></head>
 <style>@media (max-width:639px){.mm-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;padding:3px;border-radius:20px}.mm-tabp{justify-content:center;padding:0 6px;font-size:13.5px;height:36px;border-radius:17px}.mm-hdr .mm-brand span{display:none}.mm-hdr .mm-brand img{width:30px;height:30px}.mm-im:has(>.mm-oneoff){display:flex;justify-content:center}}.mm-hdr-sp{width:40px;height:40px;flex:none}.mm-tsgw{display:grid;grid-template-columns:1fr 1fr;gap:2px;padding:3px;margin-bottom:14px;border-radius:18px;background:#F2F2F2}.mm-tsg{height:40px;border-radius:15px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;color:rgba(0,0,0,.55)}.mm-tsg.on{background:#fff;color:#111;font-weight:600}</style>
 <body>
