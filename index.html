@@ -131286,7 +131286,7 @@ function MXAccess({ a, parents, onUnlink, onArchive, onDelete }) {
   } }) : null);
 }
 function MXBoot() {
-  return /* @__PURE__ */ H.createElement("div", { className: "mxboot" }, /* @__PURE__ */ H.createElement("b", null, "Maomao School"));
+  return /* @__PURE__ */ H.createElement("div", { className: "mxboot" }, /* @__PURE__ */ H.createElement("b", null, "Maomao School"), /* @__PURE__ */ H.createElement("small", null, "\xA9 2026 Maomao School"));
 }
 
 XS.createRoot(document.getElementById("root")).render(c.jsx(m4,{}));</script>
@@ -132302,10 +132302,13 @@ div:has(>.mm-txk) .mm-txk{line-height:1}
 .mxboot b{font:700 34px Inter,-apple-system,sans-serif;letter-spacing:-.035em;color:#111;animation:mxboot 1.6s ease-in-out infinite}
 @keyframes mxboot{0%,100%{opacity:1}50%{opacity:.45}}
 .theme-dark .mxboot{background:#0E0E0F}.theme-dark .mxboot b{color:#F2F2F3}
+.mxboot b{font-size:clamp(48px,6vw,84px);letter-spacing:-.045em}
+.mxboot small{position:absolute;bottom:32px;left:0;right:0;text-align:center;font:400 13px Inter,-apple-system,sans-serif;color:#6B6B70}
+.theme-dark .mxboot small{color:#8A8A90}
 </style></head>
 <style>@media (max-width:639px){.mm-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;padding:3px;border-radius:20px}.mm-tabp{justify-content:center;padding:0 6px;font-size:13.5px;height:36px;border-radius:17px}.mm-hdr .mm-brand span{display:none}.mm-hdr .mm-brand img{width:30px;height:30px}.mm-im:has(>.mm-oneoff){display:flex;justify-content:center}}.mm-hdr-sp{width:40px;height:40px;flex:none}.mm-tsgw{display:grid;grid-template-columns:1fr 1fr;gap:2px;padding:3px;margin-bottom:14px;border-radius:18px;background:#F2F2F2}.mm-tsg{height:40px;border-radius:15px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;color:rgba(0,0,0,.55)}.mm-tsg.on{background:#fff;color:#111;font-weight:600}</style>
 <body>
-<div id="root"><div id="mm-boot" class="mxboot"><b>Maomao School</b></div></div>
+<div id="root"><div id="mm-boot" class="mxboot"><b>Maomao School</b><small>© 2026 Maomao School</small></div></div>
 <style>.mm-bootlogo{width:56px;height:56px;object-fit:contain;animation:mmBootBlink 1.4s ease-in-out infinite}@keyframes mmBootBlink{0%,100%{opacity:1}50%{opacity:.25}}</style>
 <script>try{if(window.__mmDarkBg){var b=document.getElementById("mm-boot");b.style.background=window.__mmDarkBg;b.firstChild.style.filter="invert(0.9)"}}catch(e){}</script>
 
