@@ -131123,6 +131123,20 @@ const MX_NAV = [["today", "\u0421\u0435\u0433\u043E\u0434\u043D\u044F", "today"]
 function MXApp() {
   const n = Kt(), nav = vn();
   const [occ, setOcc] = H.useState(null);
+  const [fold, setFold0] = H.useState(() => {
+    try {
+      return localStorage.getItem("mmxFold") === "1";
+    } catch (e) {
+      return false;
+    }
+  });
+  const setFold = (v) => {
+    setFold0(v);
+    try {
+      localStorage.setItem("mmxFold", v ? "1" : "0");
+    } catch (e) {
+    }
+  };
   const tab = nav.tab === "today" || !nav.tab ? "today" : nav.tab;
   H.useEffect(() => {
     if (!nav.tab || nav.tab === "schedule" && !MXApp.inited) {
@@ -131151,7 +131165,7 @@ function MXApp() {
     view = c.jsx(M5, {});
   }
   const name = n.settings.name || n.user.displayName || n.user.email;
-  return /* @__PURE__ */ H.createElement("div", { className: "mmx mmx-root" }, /* @__PURE__ */ H.createElement("div", { className: "shell" }, /* @__PURE__ */ H.createElement("div", { className: "app" }, /* @__PURE__ */ H.createElement("aside", { className: "side", "aria-label": "\u041C\u0435\u043D\u044E" }, /* @__PURE__ */ H.createElement("div", { className: "brand" }, /* @__PURE__ */ H.createElement("b", null, "Maomao Class")), /* @__PURE__ */ H.createElement("nav", null, MX_NAV.map(item), item(["materials", "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B\u044B", "book"])), /* @__PURE__ */ H.createElement("div", { className: "foot" }, /* @__PURE__ */ H.createElement("button", { className: "me" + (tab === "settings" && !top ? " on" : ""), onClick: () => nav.setTab("settings") }, /* @__PURE__ */ H.createElement("span", { className: "ava" }, n.settings.photo ? /* @__PURE__ */ H.createElement("img", { src: n.settings.photo, alt: "" }) : MXini(n.settings.name || "\u0414")), /* @__PURE__ */ H.createElement("span", { style: { flex: 1, minWidth: 0, textAlign: "left" } }, /* @__PURE__ */ H.createElement("b", { style: { display: "block", fontWeight: 600, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" } }, name), /* @__PURE__ */ H.createElement("span", { style: { fontSize: 13, color: "#55595D" } }, "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"))))), /* @__PURE__ */ H.createElement("main", { className: "main" }, own ? /* @__PURE__ */ H.createElement("div", { className: "crumb" }, /* @__PURE__ */ H.createElement("span", { className: "c" }, "Maomao Class"), /* @__PURE__ */ H.createElement("span", { className: "s" }, "\u203A"), /* @__PURE__ */ H.createElement("span", null, TITLE[tab])) : null, /* @__PURE__ */ H.createElement("div", { className: own ? "view anim" : "oldview", key: tab + (top ? nav.stack.length : "") }, view)))), occ ? /* @__PURE__ */ H.createElement(MXLesson, { occ, onClose: () => setOcc(null) }) : null);
+  return /* @__PURE__ */ H.createElement("div", { className: "mmx mmx-root" + (fold ? " fold" : "") }, /* @__PURE__ */ H.createElement("div", { className: "shell" }, /* @__PURE__ */ H.createElement("div", { className: "app" }, fold ? /* @__PURE__ */ H.createElement("button", { className: "mxunfold", "aria-label": "\u041F\u043E\u043A\u0430\u0437\u0430\u0442\u044C \u043C\u0435\u043D\u044E", title: "\u041F\u043E\u043A\u0430\u0437\u0430\u0442\u044C \u043C\u0435\u043D\u044E", onClick: () => setFold(false) }, /* @__PURE__ */ H.createElement(MX.Ic, { k: "chev" }), n.unread + n.toCheck.length ? /* @__PURE__ */ H.createElement("i", { className: "dotn" }) : null) : null, /* @__PURE__ */ H.createElement("aside", { className: "side", "aria-label": "\u041C\u0435\u043D\u044E" }, /* @__PURE__ */ H.createElement("div", { className: "brand" }, /* @__PURE__ */ H.createElement("b", null, "Maomao Class"), /* @__PURE__ */ H.createElement("button", { className: "mxpin", "aria-label": "\u0421\u0432\u0435\u0440\u043D\u0443\u0442\u044C \u043C\u0435\u043D\u044E", title: "\u0421\u0432\u0435\u0440\u043D\u0443\u0442\u044C \u043C\u0435\u043D\u044E", onClick: () => setFold(true) }, /* @__PURE__ */ H.createElement(MX.Ic, { k: "back" }))), /* @__PURE__ */ H.createElement("nav", null, MX_NAV.map(item), item(["materials", "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B\u044B", "book"])), /* @__PURE__ */ H.createElement("div", { className: "foot" }, /* @__PURE__ */ H.createElement("button", { className: "me" + (tab === "settings" && !top ? " on" : ""), onClick: () => nav.setTab("settings") }, /* @__PURE__ */ H.createElement("span", { className: "ava" }, n.settings.photo ? /* @__PURE__ */ H.createElement("img", { src: n.settings.photo, alt: "" }) : MXini(n.settings.name || "\u0414")), /* @__PURE__ */ H.createElement("span", { style: { flex: 1, minWidth: 0, textAlign: "left" } }, /* @__PURE__ */ H.createElement("b", { style: { display: "block", fontWeight: 600, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" } }, name), /* @__PURE__ */ H.createElement("span", { style: { fontSize: 13, color: "#55595D" } }, "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"))))), /* @__PURE__ */ H.createElement("main", { className: "main" }, own ? /* @__PURE__ */ H.createElement("div", { className: "crumb" }, /* @__PURE__ */ H.createElement("span", { className: "c" }, "Maomao Class"), /* @__PURE__ */ H.createElement("span", { className: "s" }, "\u203A"), /* @__PURE__ */ H.createElement("span", null, TITLE[tab])) : null, /* @__PURE__ */ H.createElement("div", { className: own ? "view anim" : "oldview", key: tab + (top ? nav.stack.length : "") }, view)))), occ ? /* @__PURE__ */ H.createElement(MXLesson, { occ, onClose: () => setOcc(null) }) : null);
 }
 function MXStudents({ open }) {
   const n = Kt();
@@ -132366,18 +132380,6 @@ div:has(>.mm-txk) .mm-txk{line-height:1}
 .theme-dark .mmx-root{background:linear-gradient(165deg,#18201F 0%,#141617 45%,#0E0E0F 100%)}
 /* текст в режиме показа — по центру */
 .mm-show .mm-sh-thead,.mm-sh-thead{justify-content:center}
-/* левая панель: свёрнута, раскрывается при наведении */
-@media (min-width:900px){
-.mmx .app{position:relative}
-.mmx .side{position:absolute;left:0;top:0;bottom:0;width:252px;z-index:40;background:var(--glass);transform:translateX(calc(-100% + 16px));transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s;box-shadow:none}
-.mmx .side>*{transition:opacity .18s}
-.mmx .side:not(:hover)>*{opacity:0}
-.mmx .side::after{content:"";position:absolute;right:6px;top:50%;width:4px;height:44px;margin-top:-22px;border-radius:2px;background:rgba(17,17,17,.18);transition:opacity .2s}
-.mmx .side:hover{transform:none;box-shadow:24px 0 60px -30px rgba(0,0,0,.35)}
-.mmx .side:hover::after{opacity:0}
-.mmx .main{margin-left:22px}
-.theme-dark .mmx .side::after{background:rgba(255,255,255,.22)}
-}
 /* ===== Система цвета: ч/б — структура (текст, меню, списки, формы, кнопки);
    пастельный градиент — карточки с данными и группы; серый — только поля и переключатели ===== */
 .mmx{--g-lav:linear-gradient(135deg,#E7E2FB 0%,#F1EEFD 100%);--g-sky:linear-gradient(135deg,#DCEBFB 0%,#ECF4FD 100%);--g-peach:linear-gradient(135deg,#FCE9CC 0%,#FBE3D6 100%);--g-mint:linear-gradient(135deg,#D8F3E2 0%,#E8F8EE 100%)}
@@ -132412,7 +132414,19 @@ div:has(>.mm-txk) .mm-txk{line-height:1}
 .theme-dark .mmx .kan .lane .hw{background:#fff;color:#111}
 .theme-dark .mmx .mxfold{background:#1C1C1E;box-shadow:inset 0 0 0 1px #2E2E31}
 .theme-dark .mmx .mxk-lav .big,.theme-dark .mmx .mxstats .st b{color:#111}
-</style><script>(function(){var B="8b62e230ed";try{fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.text():""}).then(function(v){v=(v||"").trim();if(v&&v!==B&&sessionStorage.getItem("mmxv")!==v){sessionStorage.setItem("mmxv",v);location.reload()}})}catch(e){}})()</script></head>
+
+/* меню закреплено; кнопка «свернуть» */
+.mmx .brand{display:flex;align-items:center;justify-content:space-between}
+.mmx .mxpin{width:32px;height:32px;border:0;border-radius:10px;background:transparent;color:#6B6B70;display:grid;place-items:center;cursor:pointer}
+.mmx .mxpin:hover{background:rgba(255,255,255,.7);color:#111}
+.mmx .mxpin .mxic,.mmx .mxunfold .mxic{width:18px;height:18px}
+.mmx-root.fold .side{display:none}
+.mmx-root.fold .main{margin-left:12px}
+.mmx .mxunfold{position:relative;flex:none;align-self:flex-start;margin:14px 0 0 10px;width:36px;height:36px;border:0;border-radius:12px;background:rgba(255,255,255,.75);color:#111;display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 14px -8px rgba(0,0,0,.25)}
+.mmx .mxunfold:hover{background:#fff}
+.mmx .mxunfold .dotn{position:absolute;top:6px;right:6px;width:8px;height:8px;border-radius:50%;background:#3B82F6}
+.theme-dark .mmx .mxpin:hover,.theme-dark .mmx .mxunfold{background:#2A2A2D;color:#F2F2F3}
+</style><script>(function(){var B="a754dd8795";try{fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.text():""}).then(function(v){v=(v||"").trim();if(v&&v!==B&&sessionStorage.getItem("mmxv")!==v){sessionStorage.setItem("mmxv",v);location.reload()}})}catch(e){}})()</script></head>
 <style>@media (max-width:639px){.mm-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;padding:3px;border-radius:20px}.mm-tabp{justify-content:center;padding:0 6px;font-size:13.5px;height:36px;border-radius:17px}.mm-hdr .mm-brand span{display:none}.mm-hdr .mm-brand img{width:30px;height:30px}.mm-im:has(>.mm-oneoff){display:flex;justify-content:center}}.mm-hdr-sp{width:40px;height:40px;flex:none}.mm-tsgw{display:grid;grid-template-columns:1fr 1fr;gap:2px;padding:3px;margin-bottom:14px;border-radius:18px;background:#F2F2F2}.mm-tsg{height:40px;border-radius:15px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;color:rgba(0,0,0,.55)}.mm-tsg.on{background:#fff;color:#111;font-weight:600}</style>
 <body>
 <div id="root"><div id="mm-boot" class="mxboot"><b>Maomao School</b><small>© 2026 Maomao School</small></div></div>
