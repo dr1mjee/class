@@ -127346,9 +127346,11 @@ function MaoMat_Ink({ box, dark }) {
     p.push(pt);
     paint([a, pt]);
   };
-  const up = () => {
+  const up = (e) => {
     const p = cur.current;
     if (!p) return;
+    /* дотянуть штрих до точки, где отпустили */
+    if (e && e.clientX != null) { const a = p[p.length - 1]; Math.hypot(e.clientX - a.x, e.clientY - a.y) > 0.5 && p.push({ x: e.clientX, y: e.clientY, r: a.r, t: e.timeStamp }); }
     const n = Math.min(8, p.length - 1);
     for (let i = 0; i < n; i++) p[p.length - 1 - i].r *= 0.4 + 0.6 * (i / n);
     cur.current = null;
@@ -132841,13 +132843,7 @@ div:has(>.mm-txk) .mm-txk{line-height:1}
 .mm-lrail:hover .mm-lrail-t,.mm-lrail.drag .mm-lrail-t{width:6px;border-radius:3px}
 .mm-lrail:hover .mm-lrail-b,.mm-lrail.drag .mm-lrail-b{background:#111;border-radius:3px}
 .mm-lrail.drag .mm-lrail-b{cursor:grabbing}
-.theme-dark .mm-ldock{background:#2A2A2D;box-shadow:0 0 0 1px rgba(255,255,255,.07),0 18px 40px -20px rgba(0,0,0,.6)}
-.theme-dark .mm-ldock-b{color:#F2F2F3}.theme-dark .mm-ldock-b:hover{background:#333336}
-.theme-dark .mm-ldock-b.on{background:#F2F2F3;color:#111}
-.theme-dark .mm-ldock-sep{background:rgba(255,255,255,.1)}
-.theme-dark .mm-ldock-hint,.theme-dark .mm-lrail-t{background:rgba(255,255,255,.12)}
-.theme-dark .mm-lrail-b{background:rgba(255,255,255,.4)}
-.theme-dark .mm-lrail:hover .mm-lrail-b,.theme-dark .mm-lrail.drag .mm-lrail-b{background:#F2F2F3}
+/* урок в тёмной теме остаётся светлым — панель и ползунок тоже светлые */
 
 /* ===== окно подтверждения (новый стиль) ===== */
 .mxconf{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;padding:24px;animation:mxcf .18s ease}
@@ -132901,7 +132897,7 @@ div:has(>.mm-txk) .mm-txk{line-height:1}
 .theme-dark .mmx .mxls-card .mk{background:#E6E9EA}.theme-dark .mmx .mxls-card .mk button{color:#55555A}
 .theme-dark .mmx .mxls-card .mk button.on{color:#fff}
 .theme-dark .mmx .mxls-card .btn.wh{background:#fff;color:#111}
-</style><script>(function(){var B="d0d56bfa7c";try{fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.text():""}).then(function(v){v=(v||"").trim();if(v&&v!==B&&sessionStorage.getItem("mmxv")!==v){sessionStorage.setItem("mmxv",v);location.reload()}})}catch(e){}})()</script></head>
+</style><script>(function(){var B="60ee89cf0c";try{fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.text():""}).then(function(v){v=(v||"").trim();if(v&&v!==B&&sessionStorage.getItem("mmxv")!==v){sessionStorage.setItem("mmxv",v);location.reload()}})}catch(e){}})()</script></head>
 <style>@media (max-width:639px){.mm-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;padding:3px;border-radius:20px}.mm-tabp{justify-content:center;padding:0 6px;font-size:13.5px;height:36px;border-radius:17px}.mm-hdr .mm-brand span{display:none}.mm-hdr .mm-brand img{width:30px;height:30px}.mm-im:has(>.mm-oneoff){display:flex;justify-content:center}}.mm-hdr-sp{width:40px;height:40px;flex:none}.mm-tsgw{display:grid;grid-template-columns:1fr 1fr;gap:2px;padding:3px;margin-bottom:14px;border-radius:18px;background:#F2F2F2}.mm-tsg{height:40px;border-radius:15px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;color:rgba(0,0,0,.55)}.mm-tsg.on{background:#fff;color:#111;font-weight:600}</style>
 <body>
 <div id="root"><div id="mm-boot" class="mxboot"><b>Maomao School</b><small>© 2026 Maomao School</small></div></div>
